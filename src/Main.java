@@ -3,9 +3,7 @@ public class Main {
         System.out.println("Welcome to movie rental system");
         long startTime = System.nanoTime();
         Customer customer = new Customer("Abul");
-        Movie movie = new Movie("Horror", 2);
-        Rental rental = new Rental(movie, 5);
-        customer.addRental(rental);
+        customer.addRental(new Rental(new Movie("Horror", new ChildrenPrice()), 5));
         System.out.println(customer.statement());
         long endTime = System.nanoTime();
         System.out.println((endTime - startTime) + " nanoseconds");

@@ -1,6 +1,6 @@
 public class Rental {
-    private Movie _movie;
-    private int _daysRented;
+    private final Movie _movie;
+    private final int _daysRented;
 
     public Rental(Movie movie, int daysRented) {
         _movie = movie;
@@ -18,7 +18,6 @@ public class Rental {
     }
 
     public int getFrequentRenterPoints() {
-        if ((getMovie().getPriceCode() == Movie.NEW_RELEASE) && getDaysRented() > 1) return 2;
-        else return 1;
+        return getMovie().frequentRenterPoints(_daysRented);
     }
 }

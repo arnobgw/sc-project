@@ -2,8 +2,8 @@ import java.util.Enumeration;
 import java.util.Vector;
 
 public class Customer {
-    private String _name;
-    private Vector _rentals = new Vector();
+    private final String _name;
+    private final Vector<Rental> _rentals = new Vector<>();
 
     public Customer(String name) {
         _name = name;
